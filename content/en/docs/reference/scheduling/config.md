@@ -137,7 +137,7 @@ extension points:
 |`CinderLimits`|Checks that [OpenStack Cinder](https://docs.openstack.org/cinder/) volume limits can be satisfied for the node.|`filter`|
 
 <p id="VolumeBinding-score">
-{{< note >}} `score` extension point is enabled when `VolumeCapacityPriority` feature is enabled. It prioritizes the smallest PVs that can fit the requested volume size. {{< /note >}}
+{{< note >}} * `score` extension point is enabled when `VolumeCapacityPriority` feature is enabled. It prioritizes the smallest PVs that can fit the requested volume size. {{< /note >}}
 </p>
 
 ### Multiple profiles
