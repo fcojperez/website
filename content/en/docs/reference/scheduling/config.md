@@ -136,7 +136,7 @@ extension points:
 |`DefaultPreemption`| Provides the default preemption mechanism.|`postFilter`|
 |`CinderLimits`|Checks that [OpenStack Cinder](https://docs.openstack.org/cinder/) volume limits can be satisfied for the node.|`filter`|
 
-<a id="VolumeBinding-score"></a>{{< note >}} `score` extension point is enabled when `VolumeCapacityPriority` feature is enabled. It prioritizes the smallest PVs that can fit the requested volume size. {{< /note >}}
+{{< note >}} <a id="VolumeBinding-score"></a> `score` extension point is enabled when `VolumeCapacityPriority` feature is enabled. It prioritizes the smallest PVs that can fit the requested volume size. {{< /note >}}
 
 ### Multiple profiles
 
