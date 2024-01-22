@@ -124,6 +124,7 @@ extension points:
 |`NodeResourcesFit`|Checks if the node has all the resources that the Pod is requesting. The score can use one of three strategies: `LeastAllocated` (default), `MostAllocated` and `RequestedToCapacityRatio`.|`preFilter`, `filter`, `score`.|
 |`NodeResourcesBalancedAllocation`|Favors nodes that would obtain a more balanced resource usage if the Pod is scheduled there.|`score`|
 |`VolumeBinding`|Checks if the node has or if it can bind the requested {{< glossary_tooltip text="volumes" term_id="volume" >}}.|`preFilter`, `filter`, `reserve`, `preBind`, `score`.|
+||{{< note >}} `score` extension point is enabled when `VolumeCapacityPriority` feature is enabled. It prioritizes the smallest PVs that can fit the requested volume size. {{< /note >}}|
 |`VolumeRestrictions`|Checks that volumes mounted in the node satisfy restrictions that are specific to the volume provider.|`filter`|
 |`VolumeZone`|Checks that volumes requested satisfy any zone requirements they might have.|`filter`|
 |`NodeVolumeLimits`| Checks that CSI volume limits can be satisfied for the node.|`filter`|
@@ -136,7 +137,7 @@ extension points:
 |`DefaultPreemption`| Provides the default preemption mechanism.|`postFilter`|
 |`CinderLimits`|Checks that [OpenStack Cinder](https://docs.openstack.org/cinder/) volume limits can be satisfied for the node.|`filter`|
 
-{{< note >}} `score` extension point is enabled when `VolumeCapacityPriority` feature is enabled. It prioritizes the smallest PVs that can fit the requested volume size. {{< /note >}} 
+
 
 ### Multiple profiles
 
